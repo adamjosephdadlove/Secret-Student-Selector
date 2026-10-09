@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <title> Secret Student Selector </title>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 
+  <body> 
+   <div class="application-container">
+     
+      <div class="input-container">
+           <input type="text" placeholder="Enter Names (seperated by comma)" id="user-content"/> 
+           <button id="enter-btn" onclick="textToArray()"> Enter </button> <!--JS Function Reference Pending-->
+      </div>
+     
+      <div class="std-view-container">
+           <div class="std-view-header"> 
+                <h3> Student View </h3>
+             </div>
+             <ul id="student-list" class="student-list">
+                 <!--Data Feed Point-->
+             </ul>
+       </div>
+     
+   </div>  <!--Application Container has been closed-->
+
+    <p id="random-results" class="result-para">
+      <!--Initalized as empty-->
+    </p>
+
+    <script src="index.js" defer>
+       
+    </script>  
+    
+    <!--Access to external JS file-->
+    
+  </body>
+</html>
