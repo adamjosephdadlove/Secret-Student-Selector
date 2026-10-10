@@ -7,12 +7,17 @@ const userNames = [];
 // Starting Arrow Function
 let textToArray = () => {
   
- const user = DOMinput.value;
+ const user = DOMinput.value.trim;
   
   if(user !== "") {
-     let rawMessage = user.split(",").map(item => item.trim());
-     userNames.push(...rawMessage);
-     resultBox.textContent = userNames;
+    
+     let rawMessage = user
+       .split(",")
+       .map(item => item.trim();
+       .filter(item => item !== "");
+    
+       userNames.push(...rawMessage);
+       resultBox.textContent = userNames;
   }
   
 };
