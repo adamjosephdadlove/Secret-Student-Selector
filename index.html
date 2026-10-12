@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,13 +21,20 @@
       <div class="std-view-container">
         <div class="std-view-header">
           <h3>Student View</h3>
+          <div class="header-actions">
+            <button class="save-btn" onclick="saveToStorage()">Save</button>
+            <button class="clear-btn" onclick="clearEntireList()">Clear All</button>
+          </div>
         </div>
 
         <ul id="student-list" class="student-list"></ul>
       </div>
     </div>
 
-    <p id="random-results" class="result-para"></p>
+    <div class="random-selection-container">
+      <button id="random-btn" onclick="pickRandomName()">Pick a Winner!</button>
+      <p id="random-results" class="result-para">Winner: </p>
+    </div>
 
     <script src="index.js" defer></script>
   </body>
