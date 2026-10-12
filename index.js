@@ -6,6 +6,28 @@ const studentList = document.getElementById("student-list");
 
 const userNames = [];
 
+const updateScreen = () => {
+    studentList.textContent= "";
+
+    userNames.forEach((value, index) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = value + " ";
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "del";
+
+          delBtn.onclick = () => {
+             userNames.splice(index, 1);
+
+             updateScreen();
+          };
+      
+      listItem.append(delBtn);
+      studentList.append(listItem);
+    });
+  
+  resultBox.textContent = userNames.join(", ");
+};
+
 const textToArray = () => {
   const user = DOMinput.value.trim();
 
@@ -17,16 +39,7 @@ const textToArray = () => {
 
     userNames.push(...rawMessage);
 
-    studentList.innerHTML = "";
-
-    userNames.forEach(name => {
-      const listItem = document.createElement("li");
-      listItem.textContent = name;
-      studentList.append(listItem);
-    });
-
-    resultBox.textContent = userNames.join(", ");
-
+    updateScreen();
     DOMinput.value = "";
   }
 };
