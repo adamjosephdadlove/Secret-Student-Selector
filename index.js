@@ -5,7 +5,6 @@ const studentList = document.getElementById("student-list");
 let userNames = [];
 
 const savedData = localStorage.getItem("studentList");
-
 if(savedData) {
      userNames = JSON.parse(savedData);
 }
