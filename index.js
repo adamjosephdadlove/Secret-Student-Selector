@@ -34,8 +34,7 @@ const updateScreen = () => {
         studentList.append(cardDiv);
     });
 
-    resultBox.textContent = userNames.join(", ");
-};
+    resultBox.textContent = "Winner: ";
 
 const textToArray = () => {
     const user = DOMinput.value.trim();
@@ -61,7 +60,7 @@ const clearEntireList = () => {
 const pickRandomName = () => {
     
     if(userNames.length > 0) {
-        const randomidx = Math.floor(Math.random * userNames.length);
+        const randomidx = Math.floor(Math.random() * userNames.length);
         const winner = userNames[randomidx];
         resultBox.textContent = "Winner: " + winner;
     } else {
