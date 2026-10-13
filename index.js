@@ -61,7 +61,7 @@ const clearEntireList = () => {
 const pickRandomName = () => {
     
     if(userNames.length > 0) {
-        const randomidx = Math.floor(Math.random + userNames.length);
+        const randomidx = Math.floor(Math.random * userNames.length);
         const winner = userNames[randomidx];
         resultBox.textContent = "Winner: " + winner;
     } else {
