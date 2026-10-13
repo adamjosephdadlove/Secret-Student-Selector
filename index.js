@@ -32,9 +32,7 @@ const updateScreen = () => {
         cardDiv.append(listItem);
         cardDiv.append(delBtn);
         studentList.append(cardDiv);
-    });
-
-    resultBox.textContent = "Winner: ";
+    }); 
 };
 
 const textToArray = () => {
