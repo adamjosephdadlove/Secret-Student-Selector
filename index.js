@@ -2,7 +2,12 @@ const DOMinput = document.querySelector("#user-content");
 const resultBox = document.getElementById("random-results");
 const studentList = document.getElementById("student-list");
 
-const userNames = [];
+let userNames = [];
+
+const savedData = localStorage.getItem("studentList");
+if(savedData) {
+     userNames = JSON.parse(savedData);
+}
 
 const updateScreen = () => {
     studentList.textContent = "";
@@ -47,3 +52,26 @@ const textToArray = () => {
         DOMinput.value = "";
     }
 };
+
+const clearEntireList = () => {
+    userNames.length = 0;
+    updateScreen();
+};
+
+const pickRandomName = () => {
+    
+    if(userNames.length > 0) {
+        const randomidx = Math.floor(Math.random + userNames.length);
+        const winner = userNames[randomidx];
+        resultBox.textContent = "Winner: " + winner;
+    } else {
+        resultBox.textContent = "Winner: No Students Added";
+    }
+    
+};
+
+const saveToStorage = () => {
+    localStorage.setItem("studentList", JSON.stringify(userNames));
+}
+
+updateScreen();
