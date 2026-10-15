@@ -59,7 +59,7 @@ const textToArray = () => {
 };
 
 const clearEntireList = () => {
-    userNames.length = 0;
+    userNames.splice();
     updateScreen();
 };
 
@@ -86,7 +86,7 @@ const saveToStorage = () => {
      }
      
      localStorage.setItem("studentList", JSON.stringify(userNames));
-     localStorage.setItem("studentStudentGrid", JSON.stringify(storedList));
+     localStorage.setItem("savedStudentGrid", JSON.stringify(storedList));
 };
 
 updateScreen();
