@@ -59,7 +59,7 @@ const textToArray = () => {
 };
 
 const clearEntireList = () => {
-    userNames.splice();
+    userNames.splice(0);
     updateScreen();
 };
 
