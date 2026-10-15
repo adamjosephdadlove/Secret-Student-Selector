@@ -4,16 +4,9 @@ const studentList = document.getElementById("student-list");
 
 let userNames = [];
 
-let storedList = {};
-
 const savedData = localStorage.getItem("studentList");
 if(savedData) {
      userNames = JSON.parse(savedData);
-}
-
-const storedListRender = localStorage.getItem("savedStudentGrid");
-if(storedListRender) {
-     storedList = JSON.parse(storedListRender);
 }
 
 const updateScreen = () => {
@@ -74,19 +67,7 @@ const pickRandomName = () => {
 };
 
 const saveToStorage = () => {
-    if(userNames.length === 0) return;
-     
-    const listInput = prompt("Enter your list name:")
-    const dateToday = new Date();
-    const savedListTimestamp = dateToday.toLocaleDateString();
-
-     storedList[listInput] = {
-          student: [...userNames],
-          date: savedListTimestamp
-     }
-     
-     localStorage.setItem("studentList", JSON.stringify(userNames));
-     localStorage.setItem("savedStudentGrid", JSON.stringify(storedList));
+    localStorage.setItem("studentList", JSON.stringify(userNames));
 };
 
 updateScreen();
