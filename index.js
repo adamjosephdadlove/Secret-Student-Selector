@@ -1,8 +1,12 @@
 const DOMinput = document.querySelector("#user-content");
 const resultBox = document.getElementById("random-results");
 const studentList = document.getElementById("student-list");
+const savedSection = document.querySelector("#saved-section-wrapper");
 
 let userNames = [];
+let storedList = {};
+let cardIsOpen = false;
+let cardKey = "";
 
 const savedData = localStorage.getItem("studentList");
 if(savedData) {
@@ -67,7 +71,58 @@ const pickRandomName = () => {
 };
 
 const saveToStorage = () => {
+     /*
+    let listInput = currentCardKey;
+
+    if (!cardIsOpen) {
+        listInput = prompt("Enter the list name:");
+        if (!listInput) return; 
+        currentCardKey = listInput;
+        cardIsOpen = true;
+    }
+    
+    let date = new Date();
+    let cardDate = date.toLocaleDateString();
+     
+    storedList[listInput] = {
+         student: [...userNames],
+         date: cardDate
+    };
+     
     localStorage.setItem("studentList", JSON.stringify(userNames));
+    localStorage.setItem("savedStudentGrid", JSON.stringify(storedList));
+
+    cardGridDisplay();
+     */
+     localStorage.setItem("studentList", JSON.stringify(userNames));
 };
+
+function cardGridDisplay() {
+  /*
+     savedSection.innerHTML = `
+        <h2 class="saved-list-header"> My Lists </h2>
+        <div class="card-grid" id="card-grid"> 
+            
+        </div>
+     `;
+
+     let gridInsertPort = document.getElementById("card-grid");
+
+     let objectIteration = Object.keys(storedList);
+     
+     objectIteration.forEach((index, value) => {
+        let card = document.createElement("div");
+        card.classList.add(grid-card);
+
+        let cardText = document.createElement("h4");
+        cardText.textContent = value.student[index];
+
+        let listItemAmount = document.createElement("div");
+        let listItemAmountPara = document.createElement("p");
+        listItemAmount.classList.add("liAmountDiv");
+        listItemAmountPara.classList.add("liAmountText");
+     });
+   */
+}
 
 updateScreen();
